@@ -5,3 +5,5 @@ document.onkeydown=function(meos){
       var se=prompt("Enter program name.html");
         window.location.href=se;
       break;
+}
+}
