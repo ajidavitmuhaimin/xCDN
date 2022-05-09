@@ -1,4 +1,4 @@
-<script>
+
   function get(){
     var df=document.getElementById("in").value;
     var res=document.getElementById("res");
@@ -13,4 +13,3 @@
   function about(){
     alert("Developed by Aji Davit Muhaimin");
   }
-</script>
