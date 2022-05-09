@@ -8,6 +8,8 @@ function get(){
     res2.innerHTML="```"+df+"```";
     res3.innerHTML="~"+df+"~";
     res4.innerHTML="*"+df+"*";
+    res5.innerHTML="_*"+df+"*_";
+    res6.innerHTML="~_+df+_~;
   };
   function about(){
     alert("Developed by Aji Davit Muhaimin");
