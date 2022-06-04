@@ -1,0 +1,51 @@
+
+@keyframes official{
+  0%{top: 100px;}
+  100%{top: 0px;}
+}
+.helloAnimation{
+  animation: official 2s;
+}
+#viewer{
+  position: relative;
+  top: -80px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+}
+@keyframes bouncing{
+  0%{top: 100px;}
+  50%{top: 0px;}
+  100%{top: 100px;}
+}
+.bouncingAnimation{
+  animation: bouncing 2s;
+}
+@keyframes rotator{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+.rotateAnimation{
+  animation: rotator 2s;
+}
+.rotateAnimation2{
+  animation: rotator 2s infinite;
+}
+@keyframes run{
+  0%{left: 0%;}
+  100%{left: 100%;}
+}
+.animationRun{
+  animation: run 2s infinite;
+}
+.maxWidth{
+  width: 100%;
+}
+@keyframes run2{
+  0%{left: 100%;}
+  100%{left: -15%;}
+}
+.animationRun2{
+  animation: run2 2s infinite;
+  bordertopri
+}
