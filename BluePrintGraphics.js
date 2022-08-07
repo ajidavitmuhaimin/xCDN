@@ -1,5 +1,5 @@
 console.log("BluePrintGraphics successfully loaded");
-
+//Version 1.1
 //Syntax List//
 console.table({
   Syntax:"Guide",
@@ -27,7 +27,8 @@ function DrawLine(CharCanvasId,Xco,Yco,ToXco,ToYco,CharLineStyle,CharLineWidth){
   ctx.lineTo(ToXco,ToYco);
   ctx.strokeStyle=CharLineStyle;
   ctx.lineWidth=CharLineWidth;
-  ctx.stroke();
+  //ctx.stroke();
+  return ctx;
 }
 
 function DrawRectangle(CharCanvasId,Xco,Yco,RectWidth,RectHeight,CharLineWidth,CharLineStyle,CharFillStyle,MoveX,MoveY){
@@ -38,8 +39,9 @@ function DrawRectangle(CharCanvasId,Xco,Yco,RectWidth,RectHeight,CharLineWidth,C
   ctx.strokeStyle=CharLineStyle;
   ctx.fillStyle=CharFillStyle;
   ctx.translate(MoveX,MoveY);
-  ctx.stroke();
-  ctx.fill();
+  //ctx.stroke();
+  //ctx.fill();
+  return ctx;
 }
 
 function DrawPie(CharCanvasId,Xco,Yco,Radius,StartAngle,EndAngle,booleanAntiClockWise,CharLineWidth,CharStrokeStyle,CharFillStyle){
@@ -49,8 +51,9 @@ function DrawPie(CharCanvasId,Xco,Yco,Radius,StartAngle,EndAngle,booleanAntiCloc
   ctx.lineWidth=CharLineWidth;
   ctx.strokeStyle=CharStrokeStyle;
   ctx.fillStyle=CharFillStyle;
-  ctx.stroke();
-  ctx.fill();
+  //ctx.stroke();
+  //ctx.fill();
+  return ctx;
 }
 
 function clearCanvas(CharCanvasId,canvasWidth,canvasHeight){
