@@ -1,12 +1,12 @@
 console.log("BluePrintGraphics successfully loaded");
-//Version 1.1
+
 //Syntax List//
 console.table({
   Syntax:"Guide",
   DrawText:"DrawText(CharCanvasId,CharText,Xco,Yco,CharStyle",
   DrawLine:"DrawLine(CharCanvasId,Xco,Yco,ToXco,ToYco,CharLineStyle,CharLineWidth)",
-  DrawRectangle:"DrawRectangle(CharCanvasId,Xco,Yco,RectWidth,RectHeight,CharLineWidth,CharLineStyle,CharFillStyle)",
-  DrawPie:"DrawPie(CharCanvasId,Xco,Yco,Radius,StartAngle,EndAngle,booleanAntiClockWise,CharLineWidth,CharStrokeStyle,CharFillStyle)",
+  DrawRectangle:"DrawRectangle(CharCanvasId,Xco,Yco,RectWidth,RectHeight,CharLineWidth,CharLineStyle,CharFillStyle,CharTextureFilePath,TexturePositionX,TexturePositionY,TextureWidth,TextureHeight)",
+  DrawPie:"DrawPie(CharCanvasId,Xco,Yco,Radius,StartAngle,EndAngle,booleanAntiClockWise,CharLineWidth,CharStrokeStyle,CharFillStyle,CharTextureFilePath,TexturePositionX,TexturePositionY,TextureWidth,TextureHeight)",
   clearCanvas:"clearCanvas(CharCanvasId,canvasWidth,canvasHeight)"
 });
 
@@ -31,7 +31,7 @@ function DrawLine(CharCanvasId,Xco,Yco,ToXco,ToYco,CharLineStyle,CharLineWidth){
   return ctx;
 }
 
-function DrawRectangle(CharCanvasId,Xco,Yco,RectWidth,RectHeight,CharLineWidth,CharLineStyle,CharFillStyle,MoveX,MoveY){
+function DrawRectangle(CharCanvasId,Xco,Yco,RectWidth,RectHeight,CharLineWidth,CharLineStyle,CharFillStyle,MoveX,MoveY,CharTextureFilePath,TexturePositionX,TexturePositionY,TextureWidth,TextureHeight){
   var paper=document.getElementById(CharCanvasId);
   var ctx=paper.getContext("2d");
   ctx.rect(Xco,Yco,RectWidth,RectHeight);
@@ -39,18 +39,28 @@ function DrawRectangle(CharCanvasId,Xco,Yco,RectWidth,RectHeight,CharLineWidth,C
   ctx.strokeStyle=CharLineStyle;
   ctx.fillStyle=CharFillStyle;
   ctx.translate(MoveX,MoveY);
+  var drawer=new Image();
+  drawer.src=CharTextureFilePath;
+  drawer.onload=function(){
+    ctx.drawImage(drawer,TexturePositionX,TexturePositionY,TextureWidth,TextureHeight);
+  }
   //ctx.stroke();
   //ctx.fill();
   return ctx;
 }
 
-function DrawPie(CharCanvasId,Xco,Yco,Radius,StartAngle,EndAngle,booleanAntiClockWise,CharLineWidth,CharStrokeStyle,CharFillStyle){
+function DrawPie(CharCanvasId,Xco,Yco,Radius,StartAngle,EndAngle,booleanAntiClockWise,CharLineWidth,CharStrokeStyle,CharFillStyle,CharTextureFilePath,TexturePositionX,TexturePositionY,TextureWidth,TextureHeight){
   var paper=document.getElementById(CharCanvasId);
   var ctx=paper.getContext("2d");
   ctx.arc(Xco,Yco,Radius,StartAngle,EndAngle*Math.PI,booleanAntiClockWise);
   ctx.lineWidth=CharLineWidth;
   ctx.strokeStyle=CharStrokeStyle;
   ctx.fillStyle=CharFillStyle;
+  var drawer=new Image();
+  drawer.src=CharTextureFilePath;
+  drawer.onload=function(){
+    ctx.drawImage(drawer,TexturePositionX,TexturePositionY,TextureWidth,TextureHeight);
+  }
   //ctx.stroke();
   //ctx.fill();
   return ctx;
