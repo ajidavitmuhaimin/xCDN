@@ -1,3 +1,4 @@
+console.log("FontArt.loadFont(documentId,Font+Name,FontNameCSS)");
 class FontArt{
   static loadFont(documentId,fontName,fontNameCSS){
     var createLink=document.createElement("link");
